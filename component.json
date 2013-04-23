@@ -1,6 +1,6 @@
 {
-  "name": "notificationCall",
-  "repo": "tylergraf/notificationCall",
+  "name": "alertserviceCaller",
+  "repo": "tylergraf/alertserviceCaller",
   "description": "ajax call for notification summaries.",
   "version": "0.0.1",
   "keywords": [],
