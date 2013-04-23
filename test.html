@@ -8,7 +8,9 @@
   <script>
     var userId = 'cis.something',
         authToken = 'authToken';
-    require('notificationCall')(userId, authToken);
+    require('notificationCall')(userId, authToken, function(err, alertserviceSummary){
+      console.log(alertserviceSummary);
+    });
   </script>
 
 </body>
