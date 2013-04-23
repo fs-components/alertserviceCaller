@@ -12,9 +12,9 @@
 var superagent = require("superagent"); 
 var notificationSummary = null;
 
-module.exports = function notificationCall(userId, authToken){
+module.exports = function notificationCall(userId, authToken, callback){
   if(typeof authToken !== 'undefined'){
-    if(notificationSummary !== null){return notificationSummary;}
+    if(notificationSummary !== null){callback(null,notificationSummary);}
     else {
       superagent
         .get('http://localhost:5000/alertservice/summary/'+userId)
@@ -22,14 +22,10 @@ module.exports = function notificationCall(userId, authToken){
         .set('Authorization', 'Bearer '+authToken)
         .end(function(res){
          if (res.ok) {
-          try {
-            notificationSummary = JSON.stringify(res.body);
-            console.log(JSON.stringify(res.body));
-          } catch(e){}
-          
-          return notificationSummary
+          notificationSummary = res.body;
+          callback(null,notificationSummary)
          } else {
-          console.log(res.text);
+          callback(res.text)
          }
        });
     }
