@@ -11,13 +11,14 @@
  */
 var superagent = require("superagent"); 
 var notificationSummary = null;
+var ALERTSERVICE_URL = 'https://familysearch.org/alertservice/summary/';
 
 module.exports = function alertserviceCaller(userId, authToken, callback){
   if(typeof authToken !== 'undefined'){
     if(notificationSummary !== null){callback(null,notificationSummary);}
     else {
       superagent
-        .get('/alertservice/summary/'+userId)
+        .get(ALERTSERVICE_URL+userId)
         .set('Accept', 'application/json')
         .set('Authorization', 'Bearer '+authToken)
         .end(function(res){
