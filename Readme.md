@@ -5,7 +5,7 @@
 
 ## Installation
 
-    $ component install tylergraf/alertserviceCaller
+    $ component install fs-components/alertserviceCaller
 
 ## Example
 ```js

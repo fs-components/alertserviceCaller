@@ -1,6 +1,6 @@
 {
   "name": "alertserviceCaller",
-  "repo": "tylergraf/alertserviceCaller",
+  "repo": "fs-components/alertserviceCaller",
   "description": "ajax call for notification summaries.",
   "version": "0.0.1",
   "keywords": [],
